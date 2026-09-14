@@ -340,3 +340,92 @@ footer p {
             calc(20px + env(safe-area-inset-bottom));
     }
 }
+
+
+/* =========================
+   Mobile Navigation
+   ========================= */
+
+.menu-button {
+    display: none;
+
+    background: #0b3d91;
+    color: #ffffff;
+
+    border: none;
+    padding: 8px 14px;
+
+    font-family: "VT323", monospace;
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.menu-button:hover {
+    background: #ffffff;
+    color: #0b3d91;
+}
+
+@media (max-width: 650px) {
+
+    nav {
+        position: relative;
+    }
+
+    .menu-button {
+        display: block;
+        margin: 0 auto;
+    }
+
+    nav a {
+        display: block;
+
+        max-height: 0;
+        overflow: hidden;
+
+        margin: 0;
+        padding: 0;
+
+        opacity: 0;
+
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            padding 0.4s ease,
+            margin 0.4s ease;
+    }
+
+    nav.menu-open a {
+        max-height: 60px;
+        margin: 6px 0;
+        padding: 6px;
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   Scroll Reveal
+   ========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
