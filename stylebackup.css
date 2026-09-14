@@ -17,6 +17,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-size: clamp(16px, 1.2vw, 22px);
 }
 
 
@@ -35,10 +36,6 @@ nav a {
     text-decoration: none;
     margin: 15px;
     font-size: 24px;
-
-    transition:
-        color 0.4s ease,
-        transform 0.3s ease;
 }
 
 nav a:hover {
@@ -52,14 +49,15 @@ nav a:hover {
 
 header {
     background: #0b3d91;
-    color: #d35400;
+    color: white;
     text-align: center;
-    padding: 40px;
+
+    padding: clamp(35px, 6vw, 90px) 5%;
 }
 
 header h1 {
     font-size: clamp(38px, 6vw, 76px);
-    margin: 0 0 10px;
+    margin: 0 0 clamp(8px, 1vw, 15px);
 }
 
 header p {
@@ -67,21 +65,24 @@ header p {
     margin: 0;
 }
 
-
 /* =========================
    Sections
    ========================= */
 
 section {
     width: min(90%, 1300px);
+
     padding-top: clamp(45px, 7vw, 100px);
     padding-bottom: clamp(45px, 7vw, 100px);
+
     margin: auto;
 }
+
 
 h2 {
     color: #0b3d91;
     font-size: clamp(30px, 4vw, 48px);
+    transition: color 0.4s ease;
 }
 
 
@@ -99,31 +100,22 @@ h2 {
     text-align: center;
 }
 
-#hero h2{
-    transition: color 0.4s ease;
-}
-
 #hero h2 {
-    color: #0b3d91;
-
     font-size: clamp(30px, 5vw, 58px);
     line-height: 1.1;
 }
 
-#hero p {
-   
-    color: #0b3d91;
-    font-size: clamp(19px, 2.5vw, 30px);
-    line-height: 1.5;
-
-    max-width: min(90%, 900px);
-    margin: auto;
-}
-
-#hero:has(p:hover) h2 {
+#hero p,
+#projects p {
     color: #d35400;
+
+    transition: color 0.4s ease;
 }
 
+#hero p:hover,
+#projects p:hover {
+    color: #0b3d91;
+}
 
 /* =========================
    Skills
@@ -131,12 +123,10 @@ h2 {
 
 .skills {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(300px, 1fr));
-
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
     gap: 30px;
 }
+
 
 .skills div {
     background: #ffffff;
@@ -147,8 +137,7 @@ h2 {
     padding: 30px;
     min-height: 150px;
 
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     transition:
         color 0.4s ease,
@@ -156,6 +145,7 @@ h2 {
         transform 0.3s ease,
         box-shadow 0.4s ease;
 }
+
 
 .skills div:hover {
     background: #ffffff;
@@ -165,48 +155,37 @@ h2 {
 
     transform: translateY(-8px);
 
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
+
 
 .skills h3 {
     color: #d35400;
-
     font-size: 30px;
     margin-top: 0;
 
     transition: color 0.4s ease;
 }
 
+
 .skills p {
     color: #d35400;
-
     font-size: 22px;
     line-height: 1.5;
 
     transition: color 0.4s ease;
 }
 
+
 .skills div:hover h3,
 .skills div:hover p {
     color: #0b3d91;
 }
-
-
-/* =========================
-   Technical Experience
-   ========================= */
-
-#skills h2 {
-    color: #0b3d91;
-
-    transition: color 0.4s ease;
-}
+ 
 
 #skills:has(.skills div:hover) h2 {
     color: #d35400;
 }
-
 
 /* =========================
    Projects
@@ -214,22 +193,6 @@ h2 {
 
 #projects {
     background: #ffffff;
-}
-
-#projects h2{
-    transition: color 0.4s ease;
-}
-
-#projects h2 {
-    color: #0b3d91;
-}
-
-#projects p {
-    color: #0b3d91;
-}
-
-#projects:has(p:hover) h2 {
-    color: #d35400;
 }
 
 
@@ -243,11 +206,11 @@ footer {
 
     text-align: center;
 
-    padding: 20px;
+    padding: clamp(18px, 3vw, 30px);
 }
 
 footer p {
-    font-size: 22px;
+    font-size: clamp(18px, 2vw, 24px);
 }
 
 
@@ -258,8 +221,7 @@ footer p {
 @media (max-width: 900px) {
 
     .skills {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr 1fr;
     }
 
     section {
@@ -275,18 +237,16 @@ footer p {
 @media (max-width: 650px) {
 
     nav {
-        padding: 15px 10px;
+        gap: 10px;
+        flex-wrap: wrap;
     }
 
     nav a {
-        display: inline-block;
-        margin: 6px 8px;
         font-size: 21px;
     }
 
     .skills {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
 
     section {
@@ -300,26 +260,21 @@ footer p {
 
 
 /* =========================
-   Small Phones
+   Small phones
    ========================= */
 
 @media (max-width: 400px) {
 
     nav {
-        padding: 12px 8px;
+        gap: 6px;
     }
 
     nav a {
-        margin: 5px;
         font-size: 19px;
     }
 
     section {
         width: 88%;
-    }
-
-    .skills div {
-        padding: 25px;
     }
 }
 
