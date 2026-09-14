@@ -1,9 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 100px;
+    font-family: "Courier New", monospace;
+    background: #f4f4f4;
+    color: #1b2a41;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    font-size: 50px;
+
+header {
+    background: #0b3d91;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+
+header p {
+    font-size: 22px;
+}
+
+
+section {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+h2 {
+    color: #d35400;
+}
+
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+
+.skills div {
+    background: white;
+    border-left: 5px solid #d35400;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.skills h3 {
+    color: #0b3d91;
+}
+
+
+#projects {
+    background: #ffffff;
+}
+
+
+footer {
+    background: #d35400;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
