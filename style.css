@@ -1,5 +1,5 @@
 body {
-    font-family: "Courier New", monospace;
+    font-family: "VT323", monospace;
     background: #f4f4f4;
     color: #1b2a41;
     margin: 0;
@@ -68,4 +68,21 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+nav {
+    text-align: center;
+    padding: 20px;
+    background: #d35400;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 24px;
+}
+
+nav a:hover {
+    color: #0b3d91;
 }
