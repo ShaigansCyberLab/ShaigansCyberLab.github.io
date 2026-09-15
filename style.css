@@ -60,6 +60,7 @@ header {
 header h1 {
     font-size: clamp(38px, 6vw, 76px);
     margin: 0 0 10px;
+    color: #ffffff;
 }
 
 header p {
@@ -257,6 +258,11 @@ footer p {
 
 @media (max-width: 900px) {
 
+    .project-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
     .skills {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
@@ -295,6 +301,11 @@ footer p {
 
     #hero {
         width: 90%;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -428,4 +439,448 @@ footer p {
     transform: translateY(0);
 }
 
+/* =========================
+   Project Cards
+   ========================= */
 
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(300px, 1fr));
+
+    gap: 30px;
+
+    margin-top: 40px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column ;
+    background: #ffffff;
+    color: #d35400;
+
+    border-left: 5px solid #d35400;
+
+    padding: 30px;
+
+    min-height: 220px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition:
+        color 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-card h3 {
+    color: #d35400;
+
+    font-size: 32px;
+
+    margin-top: 0;
+
+    transition: color 0.4s ease;
+}
+
+.project-card p {
+    color: #d35400;
+    min-height: 90px;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    transition: color 0.4s ease;
+}
+
+.project-card span {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #0b3d91;
+
+    font-size: 18px;
+
+    transition: color 0.4s ease;
+}
+
+.project-card:hover {
+    color: #0b3d91;
+
+    border-left-color: #0b3d91;
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.project-card:hover h3,
+.project-card:hover p,
+.project-card:hover span {
+    color: #0b3d91;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.project-links a {
+    display: inline-block;
+
+    background: #0b3d91;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    padding: 8px 18px;
+
+    font-size: 19px;
+
+    border: 2px solid #0b3d91;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-links a:hover {
+    background: #ffffff;
+    color: #d35400;
+
+    border-color: #d35400;
+
+    transform: translateY(-3px);
+}
+
+/* =========================
+   About Page
+   ========================= */
+
+#about,
+#background,
+#focus,
+#approach,
+#exploring {
+    text-align: center;
+}
+
+#about p,
+#background p,
+#approach p,
+#exploring p {
+    max-width: 900px;
+
+    margin: 20px auto;
+
+    color: #0b3d91;
+
+    font-size: 23px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   About Cards
+   ========================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(300px, 1fr));
+
+    gap: 30px;
+
+    margin-top: 40px;
+}
+
+.about-card {
+    background: #ffffff;
+
+    color: #d35400;
+
+    border-left: 5px solid #d35400;
+
+    padding: 30px;
+
+    min-height: 160px;
+
+    text-align: left;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition:
+        color 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.4s ease;
+}
+
+.about-card h3 {
+    color: #d35400;
+
+    font-size: 30px;
+
+    margin-top: 0;
+
+    transition: color 0.4s ease;
+}
+
+.about-card p {
+    color: #d35400;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    margin: 0;
+
+    transition: color 0.4s ease;
+}
+
+.about-card:hover {
+    color: #0b3d91;
+
+    border-left-color: #0b3d91;
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.about-card:hover h3,
+.about-card:hover p {
+    color: #0b3d91;
+}
+
+
+/* =========================
+   About Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .about-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #about p,
+    #background p,
+    #approach p,
+    #exploring p {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   Projects Page
+   ========================= */
+
+#project-list {
+    width: min(90%, 1100px);
+}
+
+.project-detail {
+    background: #ffffff;
+
+    color: #d35400;
+
+    border-left: 5px solid #d35400;
+
+    padding: 35px;
+
+    margin-top: 30px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition:
+        color 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-detail h3 {
+    color: #d35400;
+
+    font-size: 34px;
+
+    margin-top: 0;
+
+    transition: color 0.4s ease;
+}
+
+.project-detail p {
+    color: #d35400;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+
+    max-width: 900px;
+
+    transition: color 0.4s ease;
+}
+
+.project-detail span {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: #0b3d91;
+
+    font-size: 19px;
+
+    transition: color 0.4s ease;
+}
+
+.project-detail:hover {
+    color: #0b3d91;
+
+    border-left-color: #0b3d91;
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.project-detail:hover h3,
+.project-detail:hover p,
+.project-detail:hover span {
+    color: #0b3d91;
+}
+
+
+/* =========================
+   Projects Responsive
+   ========================= */
+
+@media (max-width: 650px) {
+
+    #project-list {
+        width: 90%;
+    }
+
+    .project-detail {
+        padding: 25px;
+    }
+
+    .project-detail h3 {
+        font-size: 29px;
+    }
+
+    .project-detail p {
+        font-size: 20px;
+    }
+
+    .project-detail span {
+        font-size: 18px;
+    }
+}
+
+/* =========================
+   Project Page Bottom Space
+   ========================= */
+
+.project-bottom-space {
+    width: min(90%, 1100px);
+
+    margin: 0 auto;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #0b3d91;
+
+    font-size: 21px;
+}
+
+#terminal {
+    text-align: center;
+}
+
+.terminal-window {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    background: #ffffff;
+    border: 3px solid #0b3d91;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+    padding: 30px;
+}
+
+.terminal-output {
+    color: #0b3d91;
+    font-size: 21px;
+    line-height: 1.5;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.terminal-output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+    background: #0b3d91;
+}
+
+.terminal-output::-webkit-scrollbar-thumb:hover {
+    background: #d35400;
+}
+
+.terminal-output span {
+    color: #d35400;
+}
+
+.terminal-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+    color: #d35400;
+    font-size: 21px;
+}
+
+.terminal-input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #0b3d91;
+    font-family: "VT323", monospace;
+    font-size: 21px;
+}
