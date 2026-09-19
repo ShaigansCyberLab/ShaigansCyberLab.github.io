@@ -11,14 +11,13 @@ html {
 }
 
 body {
-    font-family: "VT323", monospace;
+    font-family: "JetBrains Mono", monospace;
     background: #f4f4f4;
     color: #1b2a41;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
-
 
 /* =========================
    Navigation
@@ -113,7 +112,7 @@ h2 {
 
 #hero p {
    
-    color: #0b3d91;
+    color: #076A0C;
     font-size: clamp(19px, 2.5vw, 30px);
     line-height: 1.5;
 
@@ -180,7 +179,7 @@ h2 {
 }
 
 .skills p {
-    color: #d35400;
+    color: #076A0C;
 
     font-size: 22px;
     line-height: 1.5;
@@ -226,7 +225,7 @@ h2 {
 }
 
 #projects p {
-    color: #0b3d91;
+    color: #076A0C;
 }
 
 #projects:has(p:hover) h2 {
@@ -410,7 +409,10 @@ footer p {
             padding 0.4s ease,
             margin 0.4s ease;
     }
-
+    
+    nav a:hover {
+    color: #0b3d91;
+}
     nav.menu-open a {
         max-height: 60px;
         margin: 6px 0;
@@ -487,7 +489,7 @@ footer p {
 }
 
 .project-card p {
-    color: #d35400;
+    color: #076A0C;
     min-height: 90px;
 
     font-size: 21px;
@@ -555,10 +557,8 @@ footer p {
 
 .project-links a:hover {
     background: #ffffff;
-    color: #d35400;
-
-    border-color: #d35400;
-
+    color: #076A0C;
+    border-color: #0DA41C;
     transform: translateY(-3px);
 }
 
@@ -582,7 +582,7 @@ footer p {
 
     margin: 20px auto;
 
-    color: #0b3d91;
+    color: #076A0C;
 
     font-size: 23px;
 
@@ -639,7 +639,7 @@ footer p {
 }
 
 .about-card p {
-    color: #d35400;
+    color: #076A0C;
 
     font-size: 21px;
 
@@ -741,7 +741,7 @@ footer p {
 }
 
 .project-detail p {
-    color: #d35400;
+    color: #076A0C;
 
     font-size: 22px;
 
@@ -802,6 +802,7 @@ footer p {
 
     .project-detail p {
         font-size: 20px;
+        color: #076A0C;
     }
 
     .project-detail span {
@@ -859,11 +860,12 @@ footer p {
 }
 
 .terminal-output::-webkit-scrollbar-thumb:hover {
-    background: #d35400;
+    background: #076A0C;
+
 }
 
 .terminal-output span {
-    color: #d35400;
+     color: #076A0C;
 }
 
 .terminal-input {
@@ -883,4 +885,163 @@ footer p {
     color: #0b3d91;
     font-family: "VT323", monospace;
     font-size: 21px;
+}
+
+#project-overview,
+#project-objectives,
+#project-environment,
+#project-work,
+#project-security,
+#project-learning,
+#project-back {
+    text-align: center;
+}
+
+#project-overview p,
+#project-objectives p,
+#project-work p,
+#project-security p,
+#project-learning p {
+    max-width: 900px;
+    margin: 20px auto;
+    color: #076A0C;
+    font-size: 23px;
+    line-height: 1.5;
+}
+
+.project-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-info-card {
+    background: #ffffff;
+    color: #d35400;
+    border-left: 5px solid #d35400;
+    padding: 30px;
+    min-height: 150px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition:
+        color 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-info-card h3 {
+    color: #d35400;
+    font-size: 30px;
+    margin-top: 0;
+    transition: color 0.4s ease;
+}
+
+.project-info-card p {
+    color: #076A0C;
+    font-size: 21px;
+    line-height: 1.5;
+    margin: 0;
+    transition: color 0.4s ease;
+}
+
+.project-info-card:hover {
+    border-left-color: #0b3d91;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.project-info-card:hover h3,
+.project-info-card:hover p {
+    color: #0b3d91;
+}
+
+#project-back {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+#project-back a {
+    display: inline-block;
+    background: #0b3d91;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 21px;
+    border: 2px solid #0b3d91;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#project-back a:hover {
+    background: #ffffff;
+    color: #076A0C;
+    border-color: #076A0C;
+    transform: translateY(-3px);
+}
+
+#github-projects {
+    background: #ffffff;
+    text-align: center;
+}
+
+#github-projects h2 {
+    color: #0b3d91;
+    transition: color 0.4s ease;
+}
+
+#github-projects:has(.project-card:hover) h2 {
+    color: #d35400;
+}
+
+#github-project-grid {
+    margin-top: 40px;
+}
+
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.project-tags span {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 2px solid #076A0C;
+    color: #d35400;
+    background: #ffffff;
+    font-size: 18px;
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
+}
+
+.project-tags span:hover {
+    background: #076A0C;
+    color: #ffffff;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    color: #0b3d91;
+    font-size: 17px;
+}
+
+.project-meta span {
+    display: inline-block;
+    padding: 4px 8px;
+}
+
+.project-meta span:last-child {
+    color: #076A0C;
+    font-weight: 700;
 }
