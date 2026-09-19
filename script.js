@@ -37,8 +37,12 @@ if (nav) {
    SCROLL REVEAL
 ================================ */
 
+/* ================================
+   SCROLL REVEAL
+================================ */
+
 const revealElements = document.querySelectorAll(
-    "section, .skills div"
+    "section:not(#github-projects), .skills div"
 );
 
 revealElements.forEach(element => {
@@ -63,6 +67,11 @@ if ("IntersectionObserver" in window) {
 
     revealElements.forEach(element => {
         revealObserver.observe(element);
+    });
+
+} else {
+    revealElements.forEach(element => {
+        element.classList.add("visible");
     });
 }
 
