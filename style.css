@@ -365,7 +365,7 @@ footer p {
     border: none;
     padding: 8px 14px;
 
-    font-family: "VT323", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 30px;
 
     cursor: pointer;
@@ -883,7 +883,7 @@ footer p {
     outline: none;
     background: transparent;
     color: #0b3d91;
-    font-family: "VT323", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 21px;
 }
 
